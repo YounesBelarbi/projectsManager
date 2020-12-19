@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
-
+import { Provider } from 'react-redux';
 
 import './styles/style.css';
 import App from './components/App';
+import appStore from './store'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-
+  <Provider store={appStore}>
     <App />
-
-  ,
+  </Provider>,
   document.getElementById('root')
 );
 
