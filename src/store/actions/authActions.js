@@ -13,5 +13,14 @@ export const signInAction = (credentials) => {
     }
 }
 
+export const signOutAction = () => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
 
-export default {signInAction}
+        firebase.auth().signOut()
+        .then(() =>{
+            dispatch({type: 'SIGNOUT_SUCCESS'});
+        })
+    }
+}
+
