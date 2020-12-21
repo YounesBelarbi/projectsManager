@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Grid, Segment } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+
+
+import {signInAction} from '../../store/actions/authActions';
 
 
 class  SignIn extends Component {
@@ -16,9 +20,10 @@ class  SignIn extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.signIn(this.state);
   }
 
-  render() {    
+  render() {   
     return (
       <Grid container  centered>
         <Grid.Column >
@@ -28,7 +33,7 @@ class  SignIn extends Component {
                 id='email'
                 control={Input}
                 label='Email'
-                placeholder='joe@schmoe.com'
+                placeholder='votre email'
                 type="email"
                 onChange={this.handleChange}
               />
@@ -54,4 +59,13 @@ class  SignIn extends Component {
   }
 }
 
-export default SignIn; 
+const MapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signInAction(creds))
+  }
+}
+
+export default connect(
+  null,
+  MapDispatchToProps
+  )(SignIn); 
