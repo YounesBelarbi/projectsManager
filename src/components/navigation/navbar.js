@@ -7,11 +7,12 @@ import SignedInLinks from './signedInLinks';
 
 
 const navbar = (props) => {
-    console.log('navbar',props)
+    const {auth} = props;
+    const link = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>;
+    
     return (
         <div>
-            <SignedOutLinks/>
-            <SignedInLinks/>
+            {link}            
         </div>
     )
 }
