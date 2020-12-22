@@ -6,7 +6,7 @@ import SignedOutLinks from './signedOutLinks';
 import SignedInLinks from './signedInLinks';
 
 
-const navbar = (props) => {
+const Navbar = (props) => {
     const {auth} = props;
     const link = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>;
     
@@ -26,6 +26,6 @@ const mapStateToProps = (state) => {
 const navbarContainer = connect(
     mapStateToProps,
     null
-)(navbar);
+)(Navbar);
 
 export default navbarContainer;

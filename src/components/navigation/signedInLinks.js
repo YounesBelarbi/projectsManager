@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { signOutAction } from '../../store/actions/authActions';
 
 
-const signedOutLinks = (props) => {
+const SignedOutLinks = (props) => {
     return (
         <div>
             <ul>
             <li>
-                <Link to="/">Nouveau projet</Link>
+                <Link to="/createProject">Nouveau projet</Link>
             </li>
             <li>
                 <Link to="/" onClick={props.signOut}>se déconnecter</Link>
@@ -29,6 +29,6 @@ const MapDispatchToProps = (dispatch) => {
 const signedOutLinksContainer = connect(
     null,
     MapDispatchToProps
-)(signedOutLinks);
+)(SignedOutLinks);
 
 export default signedOutLinksContainer

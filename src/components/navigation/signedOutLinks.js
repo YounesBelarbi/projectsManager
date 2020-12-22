@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 
-const signedOutLinks = () => {
+const SignedOutLinks = () => {
     return (
         <div>
             <ul>
@@ -17,4 +17,4 @@ const signedOutLinks = () => {
     )
 }
 
-export default signedOutLinks
+export default SignedOutLinks
