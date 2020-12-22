@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { isLoaded } from 'react-redux-firebase';
 
-
 import Navbar from '../navigation/navbar';
 import SignIn from '../auth/SignIn';
 import SignUp from '../auth/SignUp';
+import CreateProject from '../projects/CreateProject'
 
 
 function AuthIsLoaded({ children }) {
@@ -25,6 +25,7 @@ function App() {
           <Switch>
             <Route exact path="/signin" component={SignIn}/>
             <Route exact path="/signup" component={SignUp}/>
+            <Route exact path="/createProject" component={CreateProject}/>
           </Switch>
         </div>
       </AuthIsLoaded>
