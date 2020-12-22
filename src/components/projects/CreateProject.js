@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {UserIsAuthenticated} from '../auth/authenticationChecker'
+import {AllowUserIfAuthenticated} from '../auth/authenticationChecker'
 
 
 const CreateProject = () => {
@@ -11,5 +11,5 @@ const CreateProject = () => {
     )
 }
 
-export default UserIsAuthenticated(CreateProject);
+export default AllowUserIfAuthenticated(CreateProject);
 

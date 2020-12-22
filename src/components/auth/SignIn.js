@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Form, Input, Button, Grid, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-
 import {signInAction} from '../../store/actions/authActions';
+import { RedirectAuthenticatedUser } from '../auth/authenticationChecker';
 
 
 class  SignIn extends Component {
@@ -65,7 +65,7 @@ const MapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(
+export default RedirectAuthenticatedUser(connect(
   null,
   MapDispatchToProps
-  )(SignIn); 
+  )(SignIn)); 
