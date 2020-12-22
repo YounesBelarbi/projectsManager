@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {UserIsAuthenticated} from '../auth/authenticationChecker'
+
 
 const CreateProject = () => {
     return (
@@ -9,5 +11,5 @@ const CreateProject = () => {
     )
 }
 
-export default CreateProject;
+export default UserIsAuthenticated(CreateProject);
 
