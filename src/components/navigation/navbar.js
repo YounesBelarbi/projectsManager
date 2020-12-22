@@ -1,41 +1,30 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 
-import { signOutAction } from '../../store/actions/authActions';
+import SignedOutLinks from './signedOutLinks';
+import SignedInLinks from './signedInLinks';
 
 
-function navbar(props) {
+const navbar = (props) => {
+    console.log('navbar',props)
     return (
         <div>
-            <ul>
-                <li>
-                    <Link to="/">Accueil</Link>
-                </li>
-                <li>
-                    <Link to="/signIn">se connecter</Link>
-                </li>
-                <li>
-                    <Link to="/signUp">s'inscrire</Link>
-                </li>
-                <li>
-                    <button  onClick={props.signOut}>se deconnecter</button>
-                </li>
-            </ul>
+            <SignedOutLinks/>
+            <SignedInLinks/>
         </div>
     )
 }
 
-const MapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
     return {
-        signOut: () => dispatch(signOutAction())
+        auth: state.firebase.auth
     }
 }
 
 const navbarContainer = connect(
-    null,
-    MapDispatchToProps
+    mapStateToProps,
+    null
 )(navbar);
 
 export default navbarContainer;
