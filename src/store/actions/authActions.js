@@ -7,8 +7,8 @@ export const signInAction = (credentials) => {
             credentials.password
         ).then(()=> {
                 dispatch({type: 'LOGIN_SUCCESS'});
-        }).catch((err) => {
-            dispatch({type: 'LOGIN_ERROR', err})
+        }).catch((error) => {
+            dispatch({type: 'LOGIN_ERROR', error})
         })
     }
 }
@@ -24,3 +24,17 @@ export const signOutAction = () => {
     }
 }
 
+export const signUpAction = (newUser) => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+                
+        firebase.auth().createUserWithEmailAndPassword(
+            newUser.email, 
+            newUser.password
+            ).then(()=>{
+            dispatch({type: 'SIGNUP_SUCCESS'});
+        }).catch((error) => {
+            dispatch({type:'SIGNUP_ERROR', error})
+        });
+    }
+}
