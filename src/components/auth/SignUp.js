@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Grid, Segment } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+
+import { RedirectAuthenticatedUser } from '../auth/authenticationChecker';
+import { signUpAction } from '../../store/actions/authActions';
 
 
 class  SignUp extends Component {
@@ -17,6 +21,7 @@ class  SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.signUpAction(this.state)
   }
 
   render() {    
@@ -63,4 +68,15 @@ class  SignUp extends Component {
   }
 }
   
-export default SignUp; 
+const MapDispatchToProps = (dispatch) => {
+  return {
+    signUpAction: (newUser) => dispatch(signUpAction(newUser))
+  }
+}  
+
+const signUpContainer = RedirectAuthenticatedUser(connect(
+  null,
+  MapDispatchToProps
+)(SignUp))
+
+export default signUpContainer; 
