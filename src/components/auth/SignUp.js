@@ -10,6 +10,8 @@ class  SignUp extends Component {
   state = {
     email:'',
     password:'',
+    firstName:'',
+    lastName:'',
     username:''
   }
 
@@ -51,6 +53,22 @@ class  SignUp extends Component {
                 control={Input}
                 label='username'
                 placeholder='username'
+                type= "text"
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                id='firstName'
+                control={Input}
+                label='firstName'
+                placeholder='firstName'
+                type= "text"
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                id='lastName'
+                control={Input}
+                label='lastName'
+                placeholder='lastName'
                 type= "text"
                 onChange={this.handleChange}
               />
