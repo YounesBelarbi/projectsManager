@@ -36,7 +36,6 @@ class  SignUp extends Component {
                 id='email'
                 control={Input}
                 label='Email'
-                placeholder='joe@schmoe.com'
                 type="email"
                 onChange={this.handleChange}
               />
@@ -44,7 +43,6 @@ class  SignUp extends Component {
                 id='password'
                 control={Input}
                 label='Mot de passe'
-                placeholder='password'
                 type= "password"
                 onChange={this.handleChange}
               />
@@ -52,7 +50,6 @@ class  SignUp extends Component {
                 id='username'
                 control={Input}
                 label='Pseudonyme'
-                placeholder='username'
                 type= "text"
                 onChange={this.handleChange}
               />
@@ -60,7 +57,6 @@ class  SignUp extends Component {
                 id='firstName'
                 control={Input}
                 label='Prénom'
-                placeholder='firstName'
                 type= "text"
                 onChange={this.handleChange}
               />
@@ -68,7 +64,6 @@ class  SignUp extends Component {
                 id='lastName'
                 control={Input}
                 label='Nom'
-                placeholder='lastName'
                 type= "text"
                 onChange={this.handleChange}
               />

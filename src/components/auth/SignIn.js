@@ -33,7 +33,6 @@ class  SignIn extends Component {
                 id='email'
                 control={Input}
                 label='Email'
-                placeholder='votre email'
                 type="email"
                 onChange={this.handleChange}
               />
@@ -41,7 +40,6 @@ class  SignIn extends Component {
                 id='password'
                 control={Input}
                 label='Mot de passe'
-                placeholder='password'
                 type= "password"
                 onChange={this.handleChange}
               />
