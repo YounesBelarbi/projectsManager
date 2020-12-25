@@ -40,7 +40,7 @@ class  SignIn extends Component {
               <Form.Field
                 id='password'
                 control={Input}
-                label='Password'
+                label='Mot de passe'
                 placeholder='password'
                 type= "password"
                 onChange={this.handleChange}
@@ -48,8 +48,7 @@ class  SignIn extends Component {
               <Form.Field
                 id='form-button-control-public'
                 control={Button}
-                content='Confirm'
-                label='Label with htmlFor'
+                content='Me connecter'
               />
             </Form>
           </Segment>

@@ -43,7 +43,7 @@ class  SignUp extends Component {
               <Form.Field
                 id='password'
                 control={Input}
-                label='Password'
+                label='Mot de passe'
                 placeholder='password'
                 type= "password"
                 onChange={this.handleChange}
@@ -51,7 +51,7 @@ class  SignUp extends Component {
               <Form.Field
                 id='username'
                 control={Input}
-                label='username'
+                label='Pseudonyme'
                 placeholder='username'
                 type= "text"
                 onChange={this.handleChange}
@@ -59,7 +59,7 @@ class  SignUp extends Component {
               <Form.Field
                 id='firstName'
                 control={Input}
-                label='firstName'
+                label='Prénom'
                 placeholder='firstName'
                 type= "text"
                 onChange={this.handleChange}
@@ -67,7 +67,7 @@ class  SignUp extends Component {
               <Form.Field
                 id='lastName'
                 control={Input}
-                label='lastName'
+                label='Nom'
                 placeholder='lastName'
                 type= "text"
                 onChange={this.handleChange}
@@ -75,8 +75,7 @@ class  SignUp extends Component {
               <Form.Field
                 id='form-button-control-public'
                 control={Button}
-                content='Confirm'
-                label='Label with htmlFor'
+                content="M'inscrire"
               />
             </Form>
           </Segment>
