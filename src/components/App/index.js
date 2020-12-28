@@ -6,7 +6,8 @@ import { isLoaded } from 'react-redux-firebase';
 import Navbar from '../navigation/navbar';
 import SignIn from '../auth/SignIn';
 import SignUp from '../auth/SignUp';
-import CreateProject from '../projects/CreateProject'
+import CreateProject from '../projects/CreateProject';
+import Dashboard from '../dashboard/Dashboard';
 
 
 function AuthIsLoaded({ children }) {
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/signin" component={SignIn}/>
             <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/createProject" component={CreateProject}/>
+            <Route exact path="/dashboard" component={Dashboard}/>
           </Switch>
         </div>
       </AuthIsLoaded>
