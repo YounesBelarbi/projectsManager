@@ -9,6 +9,7 @@ import SignUp from '../auth/SignUp';
 import CreateProject from '../projects/CreateProject';
 import Dashboard from '../dashboard/Dashboard';
 import  ProjectDetails  from '../projects/ProjectDetails';
+import  ProjectEdit  from '../projects/ProjectEdit';
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/createProject" component={CreateProject}/>
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route path='/project/:id' component={ProjectDetails} />
+            <Route path='/edit/:id' component={ProjectEdit} />
           </Switch>
         </div>
       </AuthIsLoaded>
