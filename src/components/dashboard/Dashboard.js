@@ -8,12 +8,12 @@ import ProjectList from '../projects/ProjectList';
 
 
 const Dashboard = ({ projects }) => {
-    if (!isLoaded(projects)) {
-        return <div>Loading...</div>
-      }
-    return (
-        <ProjectList projects = {projects}/>
-      )
+  if (!isLoaded(projects)) {
+      return <div>Loading...</div>
+    }
+  return (
+      <ProjectList projects = {projects}/>
+    )
 }
 
 const mapStateToProps = (state) => {
