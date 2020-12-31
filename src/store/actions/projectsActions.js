@@ -17,3 +17,19 @@ export const createProjectAction = (project) => {
         })
     }
 }
+
+export const ProjectEditAction = (projectId, project) => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firestore = getFirebase().firestore();
+
+        firestore.collection('projects').doc(projectId).update({
+            ...project,
+            updatedAt: new Date()
+        }).then(()=> {
+            dispatch({type: 'UPDATE_PROJECT_SUCCESS', project})
+        }).catch((error)=> {
+            dispatch({type: 'UPDATE_PROJECT_ERROR', error})
+        })
+    }
+}
+
