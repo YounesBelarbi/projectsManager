@@ -33,3 +33,15 @@ export const ProjectEditAction = (projectId, project) => {
     }
 }
 
+export const deleteProjectAction = (projectId) => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firestore = getFirebase().firestore();
+
+        firestore.collection('projects').doc(projectId).delete()
+        .then(()=> {
+            dispatch({type: 'DELETE_PROJECT_SUCCESS'})
+        }).catch((error)=> {
+            dispatch({type: 'DELETE_PROJECT_ERROR', error})
+        })
+    }
+}
