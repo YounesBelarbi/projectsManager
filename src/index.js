@@ -7,13 +7,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import 'firebase/database';
-import 'firebase/firestore'
+import 'firebase/firestore';
+import { createFirestoreInstance } from 'redux-firestore';
 
 
 import './styles/style.css';
 import App from './components/App';
-import appStore from './store'
-import {fbConfig} from './components/config/firebaseConfig'
+import appStore from './store';
+import {fbConfig} from './components/config/firebaseConfig';
 
 // react-redux-firebase 
 const rrfConfig = {
@@ -23,14 +24,14 @@ const rrfConfig = {
 }
 
 // Initialize firebase instance
-firebase.initializeApp(fbConfig)
+firebase.initializeApp(fbConfig);
 firebase.firestore();
 
 const rrfProps = {
   firebase,
   config: rrfConfig,
   dispatch: appStore.dispatch,
-  // createFirestoreInstance // <- needed if using firestore
+  createFirestoreInstance 
 }
 
 ReactDOM.render(
