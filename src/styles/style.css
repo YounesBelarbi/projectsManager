@@ -16,3 +16,10 @@ code {
   height: 600px;
 }
 
+.sign_up_form_label {
+  text-align: left;
+}
+
+.sign_up_form{
+  margin: 0 1.5em;
+}
