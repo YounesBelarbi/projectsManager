@@ -24,7 +24,6 @@ function App() {
     <BrowserRouter>
       <AuthIsLoaded>            
         <div className="App">
-          <h1>Projects Manager</h1>
           <Navbar/>
           <Switch>
             <Route exact path="/signin" component={SignIn}/>

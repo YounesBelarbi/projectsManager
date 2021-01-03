@@ -28,8 +28,8 @@ class  SignUp extends Component {
 
   render() {    
     return (
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-        <Grid.Column className="sign_in_form" style={{ maxWidth: 700 }}>
+      <Grid textAlign='center' style={{ paddingTop: 200}} verticalAlign='middle' container>
+        <Grid.Column className="sign_in_form" style={{ maxWidth: 700 }} Column>
           <Header as='h2' color='blue' textAlign='center'>
             Création de compte
           </Header>

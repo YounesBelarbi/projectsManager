@@ -26,7 +26,7 @@ class  SignIn extends Component {
 
   render() {   
     return (
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+      <Grid textAlign='center' style={{ paddingTop: 200}} verticalAlign='middle'>
         <Grid.Column className="sign_in_form" style={{ maxWidth: 450 }}>
           <Header as='h2' color='blue' textAlign='center'>
             Connexion à votre compte
