@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { Menu } from 'semantic-ui-react';
 
 import SignedOutLinks from './signedOutLinks';
 import SignedInLinks from './signedInLinks';
@@ -11,9 +11,9 @@ const Navbar = (props) => {
     const link = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>;
     
     return (
-        <div>
-            {link}            
-        </div>
+      <Menu  size='huge' inverted >
+        {link}
+      </Menu>    
     )
 }
 

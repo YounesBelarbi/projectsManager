@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+.signup_container {
+  padding-top: 200px;
+}
 .sign_in_form {
   height: 600px;
 }
@@ -22,4 +25,8 @@ code {
 
 .sign_up_form{
   margin: 0 1.5em;
+}
+
+.menu .container {
+  height: 70px;
 }
