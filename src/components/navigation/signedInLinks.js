@@ -12,14 +12,23 @@ const SignedOutLinks = (props) => {
             <Menu.Item
                 as={NavLink} to="/home"
                 name='Accueil'
+                activeStyle={{
+                    background:'#1279c6',
+                }}  
             />            
             <Menu.Item 
                 as={NavLink} to="/dashboard"
                 name='Mes projets'
+                activeStyle={{
+                    background:'#1279c6',
+                }}
             />
             <Menu.Item 
                 as={NavLink} to="/createProject"
                 name='Nouveau projet'
+                activeStyle={{
+                    background:'#1279c6',
+                }}
             />
             <Menu.Item position='right'>
                 <Button 
@@ -46,4 +55,4 @@ const signedOutLinksContainer = connect(
     MapDispatchToProps
 )(SignedOutLinks);
 
-export default signedOutLinksContainer
+export default signedOutLinksContainer;
