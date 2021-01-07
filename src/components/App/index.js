@@ -10,6 +10,7 @@ import CreateProject from '../projects/CreateProject';
 import Dashboard from '../dashboard/Dashboard';
 import  ProjectDetails  from '../projects/ProjectDetails';
 import  ProjectEdit  from '../projects/ProjectEdit';
+import Home from '../home/home.js';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <div className="App">
           <Navbar/>
           <Switch>
+            <Route exact path="/" component={Home}/>
             <Route exact path="/signin" component={SignIn}/>
             <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/createProject" component={CreateProject}/>
