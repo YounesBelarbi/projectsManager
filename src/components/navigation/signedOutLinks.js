@@ -7,7 +7,7 @@ const SignedOutLinks = () => {
     return (
         <Container>
             <Menu.Item
-                as={NavLink} to="/"
+                as={NavLink} to="/home"
                 name='Accueil'
                 activeStyle={{
                     background:'#1279c6',
