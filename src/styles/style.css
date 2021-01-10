@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ebfaff;
 }
 
 code {
@@ -30,3 +31,55 @@ code {
 .menu .container {
   height: 70px;
 }
+
+.form_title {
+  text-align: center;
+  padding-bottom: 1.5em;
+  font-size: 3em;
+}
+
+
+
+.ui.grid>.column:not(.row) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.project_list .ui.grid{
+ padding-top: 90px;
+
+}
+
+/* .project_summary {
+  height: 100px;
+  line-height: 100px;
+  padding: 40px;
+} */
+
+.project_list {
+  margin: 20px;
+  border: 1px solid #d4d4d4;
+  height: 65px;
+  text-align: center;
+  background-color: white;
+  padding: 6px;
+}
+
+.project_summary div {
+   /*transform: translateY(-50%);
+  position: relative;
+  top: 50%; */
+  line-height: 65px;
+  height: 100%;
+  
+}
+
+.ui[class*="two column"].grid>.column:not(.row) {
+  width: 46%;
+}
+
+.project_card {
+  width: 200px;
+  background-color: red;
+}
+

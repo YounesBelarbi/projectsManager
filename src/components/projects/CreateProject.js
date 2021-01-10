@@ -26,8 +26,8 @@ class  CreateProject extends Component {
 	render() {    
 		return (
 			<Grid container  centered>
-				<Grid.Column >
-					<h2>Nouveau Projet</h2>
+				<Grid.Column style={{ paddingTop: 200}}>
+					<h2 className='form_title'>Nouveau Projet</h2>
 					<Segment>  	
 						<Form onSubmit={this.handleSubmit}>
 							<Form.Input fluid label='Titre' id='title' onChange={this.handleChange}/>
