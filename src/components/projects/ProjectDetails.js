@@ -2,40 +2,50 @@ import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import { Button, Container, Header, Segment } from 'semantic-ui-react';
+import moment from 'moment';
+import 'moment/locale/fr';
 
 import { AllowUserIfAuthenticated } from '../auth/authenticationChecker';
 import { deleteProjectAction } from '../../store/actions/projectsActions';
 
 
 class ProjectDetails extends Component {
+  handleDelete = (e) => {
+      this.props.deleteProjectAction( this.props.projectId);
+      this.props.history.push('/dashboard');
+  }
 
-    handleDelete = (e) => {
-        this.props.deleteProjectAction( this.props.projectId);
-        this.props.history.push('/dashboard');
-    }
+  render() { 
 
-    render() { 
-        if (this.props.project) {
-            return (
-                <div>
-                    <h3>project detail</h3>
-                    <p>{this.props.project.content}</p>
-                    <Link 
-                        to={{
-                            pathname: '/edit/' + this.props.projectId,
-                            state: { project: this.props.project }
-                        }}>
-                        modifier le projet
-                    </Link>
-                    <div>
-                        <button onClick={this.handleDelete}>supprimer le projet </button>
-                    </div>
-                </div>
-            )
-        } else {
-            return <Redirect to='/dashboard' /> 
-        }
+    if (this.props.project) {
+      return (
+        <Segment style={{ padding: '8em 0em' }} vertical>
+          <Container text>
+            <Header as='h3' style={{ fontSize: '2em' }}> {this.props.project.title} </Header>
+            <p style={{ fontSize: '1.33em' }}> {this.props.project.content} </p>
+            <p style={{ fontSize: '0.75em' }}> projet créé le {moment(this.props.project.createdAt.toDate()).format("LLL")} </p>
+            {this.props.project.updatedAt ?              
+            <p style={{ fontSize: '0.75em' }}>
+              dernière modification le {moment(this.props.project.updatedAt.toDate()).format("LLL")}
+            </p>
+            : null}
+            <Button as={Link} size='large' to={{
+              pathname: '/edit/' + this.props.projectId,
+              state: { project: this.props.project }
+            }}>
+              Modifier le projet
+            </Button>
+            <Button as='a' size='large'  onClick={this.handleDelete}>
+              supprimer le projet
+            </Button>
+          </Container>
+        </Segment>
+      )    
+    } else {
+        return <Redirect to='/dashboard' /> 
     }
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {

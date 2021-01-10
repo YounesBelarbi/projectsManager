@@ -34,9 +34,9 @@ class  ProjectEdit extends Component {
     
     render() {    
         return (
-            <Grid container  centered>
-                <Grid.Column >
-                    <h2>Modifier le projet</h2>
+            <Grid container  >
+                <Grid.Column style={{ paddingTop: 200}}>
+                    <h2 className='form_title'>Modifier le projet</h2>
                     <Segment>  	
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Input fluid label='Titre' id='title' onChange={this.handleChange} value={this.state.title}/>
