@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+/* --------------------
+  authentication 
+---------------------*/
+
 .signup_container {
   padding-top: 200px;
 }
@@ -39,7 +43,9 @@ code {
 }
 
 
-
+/* --------------------
+  project components 
+---------------------*/
 .ui.grid>.column:not(.row) {
   padding-top: 0;
   padding-bottom: 0;
@@ -83,3 +89,38 @@ code {
   background-color: red;
 }
 
+
+/* --------------------
+  home page 
+---------------------*/
+.ui.inverted.vertical.segment {
+  height: 90vh;
+  background-color: #ebfaff;
+}
+
+.ui.content.container {
+  height: 300px;
+  position: absolute;
+  top: 0;
+  color: black;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ui.content.container h1.header {
+  font-size: 36px;
+  color: black;
+}
+
+.ui.content.container p {
+  font-size: 21px;
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ui.inverted.vertical.segment footer.ui.segment a {
+  color: white;
+}
