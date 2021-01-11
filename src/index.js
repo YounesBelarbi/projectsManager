@@ -14,7 +14,7 @@ import { createFirestoreInstance } from 'redux-firestore';
 import './styles/style.css';
 import App from './components/App';
 import appStore from './store';
-import {fbConfig} from './components/config/firebaseConfig';
+import {fbConfig} from './firebase/firebaseConfig';
 
 // react-redux-firebase 
 const rrfConfig = {
