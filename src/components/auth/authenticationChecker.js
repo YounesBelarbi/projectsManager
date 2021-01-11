@@ -22,7 +22,7 @@ export const RedirectAuthenticatedUser = connectedRouterRedirect({
     AuthenticatingComponent: LoadingScreen,
     allowRedirectBack: false,
     redirectPath: (state, ownProps) =>
-        locationHelper.getRedirectQueryParam(ownProps) || '/createProject',
+        locationHelper.getRedirectQueryParam(ownProps) || '/dashboard',
     authenticatingSelector: ({ firebase: { auth, isInitializing } }) =>
         !auth.isLoaded || isInitializing === true,
     authenticatedSelector: ({ firebase: { auth } }) =>
