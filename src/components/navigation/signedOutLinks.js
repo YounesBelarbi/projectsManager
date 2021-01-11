@@ -1,19 +1,38 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Button, Container, Menu } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 
 const SignedOutLinks = () => {
     return (
-        <div>
-            <ul>
-                <li>
-                    <Link to="/signIn">se connecter</Link>
-                </li>
-                <li>
-                    <Link to="/signUp">s'inscrire</Link>
-                </li>
-            </ul>                
-        </div>
+        <Container>
+            <Menu.Item
+                as={NavLink} 
+                exact to="/"
+                name='Accueil'
+                activeStyle={{
+                    background:'#1279c6',
+                }}
+  
+            />        
+            <Menu.Item position='right'>
+                <Button 
+                    as={NavLink} to="/signIn"  
+                    color='blue'
+                    name='signIn'  
+                >
+                    se connecter
+                </Button>
+                <Button 
+                    style={{ marginLeft: '0.5em' }}
+                    as={NavLink} to="/signUp"  
+                    color='blue'
+                    name='signUp' 
+                >
+                    s'inscrire
+                </Button>
+            </Menu.Item>
+      </Container>
     )
 }
 

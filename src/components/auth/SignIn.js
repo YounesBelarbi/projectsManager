@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Grid, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 import {signInAction} from '../../store/actions/authActions';
 import { RedirectAuthenticatedUser } from '../auth/authenticationChecker';
@@ -25,32 +26,39 @@ class  SignIn extends Component {
 
   render() {   
     return (
-      <Grid container  centered>
-        <Grid.Column >
-          <Segment>
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Field
-                id='email'
-                control={Input}
-                label='Email'
-                type="email"
-                onChange={this.handleChange}
+      <Grid textAlign='center' style={{ paddingTop: 200}} verticalAlign='middle'>
+        <Grid.Column className="sign_in_form" style={{ maxWidth: 450 }}>
+          <Header as='h2' color='blue' textAlign='center'>
+            Connexion à votre compte
+          </Header>
+          <Form size='large' onSubmit={this.handleSubmit}>
+            <Segment stacked>
+              <Form.Input 
+              fluid icon='user' 
+              iconPosition='left' 
+              placeholder='Email'
+              id='email'
+              type="email"
+              onChange={this.handleChange} 
               />
-              <Form.Field
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
+                placeholder='Mot de passe'
                 id='password'
-                control={Input}
-                label='Mot de passe'
                 type= "password"
                 onChange={this.handleChange}
               />
-              <Form.Field
-                id='form-button-control-public'
-                control={Button}
-                content='Me connecter'
-              />
-            </Form>
-          </Segment>
-        </Grid.Column>  
+              <Button color='blue' fluid size='large'>
+                Me connecter
+              </Button>
+            </Segment>
+          </Form>
+          <Message>
+            Nouveau? <Link to="/signUp">s'inscrire</Link>
+          </Message>
+        </Grid.Column>
       </Grid>
     );
   }

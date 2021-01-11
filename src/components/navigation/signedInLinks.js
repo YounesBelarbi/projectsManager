@@ -1,25 +1,47 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
+import { Button, Container, Menu } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 import { signOutAction } from '../../store/actions/authActions';
 
 
 const SignedOutLinks = (props) => {
     return (
-        <div>
-            <ul>
-                <li>
-                    <Link to="/createProject">Nouveau projet</Link>
-                </li>
-                <li>
-                    <Link to="/dashboard">Projets</Link>
-                </li>
-                <li>
-                    <Link to="/" onClick={props.signOut}>se déconnecter</Link>
-                </li>
-            </ul>                
-        </div>
+        <Container>   
+            <Menu.Item
+                as={NavLink} 
+                exact to="/"
+                name='Accueil'
+                activeStyle={{
+                    background:'#1279c6',
+                }}  
+            />            
+            <Menu.Item 
+                as={NavLink} to="/dashboard"
+                name='Mes projets'
+                activeStyle={{
+                    background:'#1279c6',
+                }}
+            />
+            <Menu.Item 
+                as={NavLink} to="/createProject"
+                name='Nouveau projet'
+                activeStyle={{
+                    background:'#1279c6',
+                }}
+            />
+            <Menu.Item position='right'>
+                <Button 
+                    as={NavLink} to="/"  
+                    color='blue'
+                    name='signOut'  
+                    onClick={props.signOut}
+                >
+                    se déconnecter
+                </Button>
+            </Menu.Item>
+        </Container> 
     )
 }
 
@@ -34,4 +56,4 @@ const signedOutLinksContainer = connect(
     MapDispatchToProps
 )(SignedOutLinks);
 
-export default signedOutLinksContainer
+export default signedOutLinksContainer;

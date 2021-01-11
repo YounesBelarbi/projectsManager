@@ -10,6 +10,7 @@ import CreateProject from '../projects/CreateProject';
 import Dashboard from '../dashboard/Dashboard';
 import  ProjectDetails  from '../projects/ProjectDetails';
 import  ProjectEdit  from '../projects/ProjectEdit';
+import Home from '../home/home.js';
 
 
 
@@ -24,13 +25,13 @@ function App() {
     <BrowserRouter>
       <AuthIsLoaded>            
         <div className="App">
-          <h1>Projects Manager</h1>
           <Navbar/>
           <Switch>
-            <Route exact path="/signin" component={SignIn}/>
-            <Route exact path="/signup" component={SignUp}/>
-            <Route exact path="/createProject" component={CreateProject}/>
-            <Route exact path="/dashboard" component={Dashboard}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/signin" component={SignIn}/>
+            <Route path="/signup" component={SignUp}/>
+            <Route path="/createProject" component={CreateProject}/>
+            <Route path="/dashboard" component={Dashboard}/>
             <Route path='/project/:id' component={ProjectDetails} />
             <Route path='/edit/:id' component={ProjectEdit} />
           </Switch>

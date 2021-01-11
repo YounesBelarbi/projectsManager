@@ -5,9 +5,122 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ebfaff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* --------------------
+  authentication 
+---------------------*/
+
+.signup_container {
+  padding-top: 200px;
+}
+.sign_in_form {
+  height: 600px;
+}
+
+.sign_up_form_label {
+  text-align: left;
+}
+
+.sign_up_form{
+  margin: 0 1.5em;
+}
+
+.menu .container {
+  height: 70px;
+}
+
+.form_title {
+  text-align: center;
+  padding-bottom: 1.5em;
+  font-size: 3em;
+}
+
+
+/* --------------------
+  project components 
+---------------------*/
+.ui.grid>.column:not(.row) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.project_list .ui.grid{
+ padding-top: 90px;
+
+}
+
+/* .project_summary {
+  height: 100px;
+  line-height: 100px;
+  padding: 40px;
+} */
+
+.project_list {
+  margin: 20px;
+  border: 1px solid #d4d4d4;
+  height: 65px;
+  text-align: center;
+  background-color: white;
+  padding: 6px;
+}
+
+.project_summary div {
+   /*transform: translateY(-50%);
+  position: relative;
+  top: 50%; */
+  line-height: 65px;
+  height: 100%;
+  
+}
+
+.ui[class*="two column"].grid>.column:not(.row) {
+  width: 46%;
+}
+
+.project_card {
+  width: 200px;
+  background-color: red;
+}
+
+
+/* --------------------
+  home page 
+---------------------*/
+.ui.inverted.vertical.segment {
+  height: 90vh;
+  background-color: #ebfaff;
+}
+
+.ui.content.container {
+  height: 300px;
+  position: absolute;
+  top: 0;
+  color: black;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ui.content.container h1.header {
+  font-size: 36px;
+  color: black;
+}
+
+.ui.content.container p {
+  font-size: 21px;
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.ui.inverted.vertical.segment footer.ui.segment a {
+  color: white;
 }

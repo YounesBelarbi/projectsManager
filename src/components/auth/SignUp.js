@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Grid, Segment } from 'semantic-ui-react';
+import { Form, Button, Grid, Segment, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
 import { RedirectAuthenticatedUser } from '../auth/authenticationChecker';
@@ -28,53 +28,52 @@ class  SignUp extends Component {
 
   render() {    
     return (
-      <Grid container  centered>
-        <Grid.Column >
-          <Segment>  
-            <Form onSubmit={this.handleSubmit}>
-              <Form.Field
+      <Grid textAlign='center' style={{ paddingTop: 200}} verticalAlign='middle' container>
+        <Grid.Column className="sign_in_form" style={{ maxWidth: 700 }} Column>
+          <Header as='h2' color='blue' textAlign='center'>
+            Création de compte
+          </Header>
+          <Form onSubmit={this.handleSubmit} className='sign_up_form'>
+            <Segment stacked>
+              <Form.Input
+                label="Prénom"
+                className='sign_up_form_label'
+                placeholder='Prénom'
+                id='firstName'
+                type= "text"
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                label="Nom"
+                className='sign_up_form_label'
+                placeholder='Nom'
+                id='lastName'
+                type= "text"
+                onChange={this.handleChange}
+              />
+              <Form.Input
+                label="Email"
+                className='sign_up_form_label'
+                placeholder='Email'
                 id='email'
-                control={Input}
-                label='Email'
                 type="email"
                 onChange={this.handleChange}
               />
-              <Form.Field
-                id='password'
-                control={Input}
+              <Form.Input
                 label='Mot de passe'
+                className='sign_up_form_label'
+                placeholder='Mot de passe'
+                id='password'
                 type= "password"
                 onChange={this.handleChange}
               />
-              <Form.Field
-                id='username'
-                control={Input}
-                label='Pseudonyme'
-                type= "text"
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                id='firstName'
-                control={Input}
-                label='Prénom'
-                type= "text"
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                id='lastName'
-                control={Input}
-                label='Nom'
-                type= "text"
-                onChange={this.handleChange}
-              />
-              <Form.Field
-                id='form-button-control-public'
-                control={Button}
-                content="M'inscrire"
-              />
-            </Form>
-          </Segment>
-        </Grid.Column>  
+              <Button color='blue' fluid size='large'>
+                M'inscrire
+              </Button>
+            </Segment>
+          </Form>
+
+        </Grid.Column>
       </Grid>
     );
   }
