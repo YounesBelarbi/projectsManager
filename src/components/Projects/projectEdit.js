@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Grid, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-import { ProjectEditAction } from '../../store/actions/projectsActions';
+import { projectEditAction } from '../../store/actions/projectsActions';
 
 
 class  ProjectEdit extends Component {
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        ProjectEditAction: (projectId, project) => dispatch(ProjectEditAction(projectId, project))
+        ProjectEditAction: (projectId, project) => dispatch(projectEditAction(projectId, project))
     }
 }
 

@@ -12,22 +12,23 @@ import { deleteProjectAction } from '../../store/actions/projectsActions';
 
 class ProjectDetails extends Component {
   handleDelete = (e) => {
-      this.props.deleteProjectAction( this.props.projectId);
+      this.props.deleteProjectAction( this.props.projectId, this.props.project);
       this.props.history.push('/dashboard');
   }
 
   render() { 
 
     if (this.props.project) {
+      const projectCreationDate = moment(this.props.project.createdAt.toDate());
       return (
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
             <Header as='h3' style={{ fontSize: '2em' }}> {this.props.project.title} </Header>
             <p style={{ fontSize: '1.33em' }}> {this.props.project.content} </p>
-            <p style={{ fontSize: '0.75em' }}> projet créé le {moment(this.props.project.createdAt.toDate()).format("LLL")} </p>
+            <p style={{ fontSize: '0.75em' }}> projet créé le {projectCreationDate.format("LL") + ' à ' + projectCreationDate.format("LT")} </p>
             {this.props.project.updatedAt ?              
             <p style={{ fontSize: '0.75em' }}>
-              dernière modification le {moment(this.props.project.updatedAt.toDate()).format("LLL")}
+              dernière modification le {moment(this.props.project.updatedAt.toDate()).format("LL")}
             </p>
             : null}
             <Button as={Link} size='large' to={{
@@ -62,7 +63,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteProjectAction: (projectId) => dispatch(deleteProjectAction(projectId))
+        deleteProjectAction: (projectId, project) => dispatch(deleteProjectAction(projectId, project))
     }
 }
 
