@@ -7,7 +7,7 @@ import { isLoaded } from 'react-redux-firebase'
 import ProjectList from '../Projects/ProjectList';
 
 
-const Dashboard = ({ projects, notification }) => {
+const Dashboard = ({ projects }) => {
   if (!isLoaded(projects)) {
       return <div>Loading...</div>
     }
@@ -26,9 +26,10 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect((props) => {
-  return [
-  {collection: 'projects', where: ['authorId', '==', props.uid]} 
-  ]})
+    return [
+      {collection: 'projects', where: ['authorId', '==', props.uid]} 
+    ]
+  })
 )(Dashboard)
   
 
