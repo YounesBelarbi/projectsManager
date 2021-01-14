@@ -23,7 +23,7 @@ const ProjectList = ({ projects } ) => {
             })}  
         </Grid.Column>
         <Grid.Column width='5' style={{ textAlign: 'center' }}>
-        <h2>Mes notifications</h2>
+        <h2>Historique de mes actions</h2>
           <Notification/>
         </Grid.Column>        
       </Grid>

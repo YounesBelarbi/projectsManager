@@ -5,9 +5,8 @@ import 'moment/locale/fr';
 
 const ProjectSummary = ({ project }) => {
     return (
-        <div>
-            <p key={project.id}>{project.title} </p>
-            <span>{moment(project.createdAt.toDate()).calendar()}</span>                 
+        <div className='project_summary'>
+            <p key={project.id}> Projet: {project.title} </p>             
         </div>
     )
 }

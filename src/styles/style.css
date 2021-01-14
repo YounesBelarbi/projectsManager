@@ -51,25 +51,30 @@ code {
   padding-bottom: 0;
 }
 
-.project_list .ui.grid{
- padding-top: 90px;
-
+.project_summary p {
+font-size: 2em;
 }
 
-/* .project_summary {
-  height: 100px;
-  line-height: 100px;
-  padding: 40px;
-} */
+.project_list .ui.grid{
+  padding-top: 90px;
+}
 
 .project_list {
   margin: 20px;
   border: 1px solid #d4d4d4;
   height: 65px;
+  line-height: 65px;
   text-align: center;
-  background-color: white;
-  padding: 6px;
+  background-color: #e4e5ea;;
+  padding: 10px;
 }
+
+.project_list:hover{
+  color: #ff7a59;
+  border: #ff7a59 solid 1px;
+  background:#fff;
+}
+
 
 .project_summary div {
    /*transform: translateY(-50%);
@@ -124,3 +129,6 @@ code {
 .ui.inverted.vertical.segment footer.ui.segment a {
   color: white;
 }
+
+
+
