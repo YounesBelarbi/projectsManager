@@ -8,7 +8,7 @@ const authReducer = (state = initialState, action) => {
             console.log('login error ')
             return {
                 ...state,
-                authError: 'login failed'
+                authError: 'Erreur dans votre e-mail ou votre mot de passe, merci de verifier votre saisie'
             }
         }
         case 'LOGIN_SUCCESS': {
@@ -27,10 +27,10 @@ const authReducer = (state = initialState, action) => {
             return state
         }  
         case 'SIGNUP_ERROR': {
-            console.log(action.err)
+            console.log('sugnup-error',action.error)
             return {
                 ...state,
-                authError: action.err
+                authError: action.error
             }
         }  
         default: {
