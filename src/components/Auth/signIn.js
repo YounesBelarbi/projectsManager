@@ -53,6 +53,7 @@ class  SignIn extends Component {
               <Button color='blue' fluid size='large'>
                 Me connecter
               </Button>
+              {this.props.authError ? <p className="error_message">{this.props.authError.authError}</p> : null}
             </Segment>
           </Form>
           <Message>
@@ -70,7 +71,13 @@ const MapDispatchToProps = (dispatch) => {
   }
 }
 
+const MapStateToProps = (state) => {
+  return {
+    authError: state.auth
+  }
+}
+
 export default RedirectAuthenticatedUser(connect(
-  null,
+  MapStateToProps,
   MapDispatchToProps
   )(SignIn)); 

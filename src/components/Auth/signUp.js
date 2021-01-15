@@ -71,6 +71,7 @@ class  SignUp extends Component {
               <Button color='blue' fluid size='large'>
                 M'inscrire
               </Button>
+              {this.props.authError.authError ? <p className='error_message'>{this.props.authError.authError.message}</p>: null}
             </Segment>
           </Form>
           <Message style={{ width: '95%', margin:'1em auto'}}>
@@ -88,8 +89,14 @@ const MapDispatchToProps = (dispatch) => {
   }
 }  
 
+const MapStateToProps = (state) => {
+  return {
+    authError: state.auth
+  }
+}
+
 const signUpContainer = RedirectAuthenticatedUser(connect(
-  null,
+  MapStateToProps,
   MapDispatchToProps
 )(SignUp))
 

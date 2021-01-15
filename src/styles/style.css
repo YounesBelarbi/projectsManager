@@ -130,5 +130,8 @@ font-size: 2em;
   color: white;
 }
 
+.error_message {
+  margin-top: 6px;
+  color: red;
 
-
+}
