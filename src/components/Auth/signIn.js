@@ -4,7 +4,7 @@ import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 import {signInAction} from '../../store/actions/authActions';
-import { RedirectAuthenticatedUser } from '../auth/authenticationChecker';
+import { RedirectAuthenticatedUser } from './authenticationChecker';
 
 
 class  SignIn extends Component {
@@ -53,6 +53,7 @@ class  SignIn extends Component {
               <Button color='blue' fluid size='large'>
                 Me connecter
               </Button>
+              {this.props.authError ? <p className="error_message">{this.props.authError.authError}</p> : null}
             </Segment>
           </Form>
           <Message>
@@ -70,7 +71,13 @@ const MapDispatchToProps = (dispatch) => {
   }
 }
 
+const MapStateToProps = (state) => {
+  return {
+    authError: state.auth
+  }
+}
+
 export default RedirectAuthenticatedUser(connect(
-  null,
+  MapStateToProps,
   MapDispatchToProps
   )(SignIn)); 

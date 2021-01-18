@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { isLoaded } from 'react-redux-firebase';
 
-import Navbar from '../navigation/navbar';
-import SignIn from '../auth/SignIn';
-import SignUp from '../auth/SignUp';
-import CreateProject from '../projects/CreateProject';
-import Dashboard from '../dashboard/Dashboard';
-import  ProjectDetails  from '../projects/ProjectDetails';
-import  ProjectEdit  from '../projects/ProjectEdit';
-import Home from '../home/home.js';
+import Navbar from '../Navigation/navbar';
+import SignIn from '../Auth/signIn';
+import SignUp from '../Auth/signUp';
+import CreateProject from '../Projects/createProject';
+import Dashboard from '../Dashboard/dashboard';
+import  ProjectDetails  from '../Projects/projectDetails';
+import  ProjectEdit  from '../Projects/projectEdit';
+import Home from '../Home/home';
 
 
 

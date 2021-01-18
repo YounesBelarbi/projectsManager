@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Grid, Button } from 'semantic-ui-react'
+import Notification from '../Notification/notification';
 
-import ProjectSummary from './ProjectSummary';
+import ProjectSummary from './projectSummary';
 
 
 const ProjectList = ({ projects } ) => {
   if (projects.length) {
     return (        
-      <Grid columns={2} padded centered style={{ paddingTop: 80}}>
+      <Grid columns={2} padded centered style={{ paddingTop: 80}} className='container_project_list'>
         <Grid.Column width='10'>
+          <h2>Mes projets</h2>
             { projects && projects.map(project => {
               return (
                 <div key={project.id} className='project_list'>
@@ -21,7 +23,8 @@ const ProjectList = ({ projects } ) => {
             })}  
         </Grid.Column>
         <Grid.Column width='5' style={{ textAlign: 'center' }}>
-          Notifications
+        <h2>Historique de mes actions</h2>
+          <Notification/>
         </Grid.Column>        
       </Grid>
     )

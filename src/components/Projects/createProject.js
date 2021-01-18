@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Grid, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
-import { AllowUserIfAuthenticated } from '../auth/authenticationChecker';
+import { AllowUserIfAuthenticated } from '../Auth/authenticationChecker';
 import { createProjectAction } from '../../store/actions/projectsActions';
 
 
@@ -13,7 +13,6 @@ class  CreateProject extends Component {
 	}
   
 	handleChange = (e) => {
-		console.log(e)
 		this.setState ({[e.target.id] : e.target.value})
 	}
   
