@@ -11,16 +11,16 @@ import Dashboard from '../Dashboard/dashboard';
 import  ProjectDetails  from '../Projects/projectDetails';
 import  ProjectEdit  from '../Projects/projectEdit';
 import Home from '../Home/home';
+import NoMatch from '../NoMatch/noMatch'
 
 
-
-function AuthIsLoaded({ children }) {
+const AuthIsLoaded = ({ children }) => {
   const auth = useSelector(state => state.firebase.auth)
   if (!isLoaded(auth)) return <div></div>;
   return children
 }
 
-function App() {
+const App = (props) => {
   return (
     <BrowserRouter>
       <AuthIsLoaded>            
@@ -34,6 +34,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard}/>
             <Route path='/project/:id' component={ProjectDetails} />
             <Route path='/edit/:id' component={ProjectEdit} />
+            <Route path='*' component={NoMatch} />
           </Switch>
         </div>
       </AuthIsLoaded>

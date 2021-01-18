@@ -135,3 +135,26 @@ font-size: 2em;
   color: red;
 
 }
+
+
+/* --------------------
+  404 page 
+---------------------*/
+.no_match {
+width: 555px;
+margin: 200px auto;
+text-align: center;
+height: 200px;
+position: absolute;
+left: 35%;
+}
+
+.no_match h2 {
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+font-size: 3em;
+}
+
+
+
