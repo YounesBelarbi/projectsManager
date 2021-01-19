@@ -9,7 +9,7 @@ import ProjectSummary from './projectSummary';
 const ProjectList = ({ projects } ) => {
   if (projects.length) {
     return (        
-      <Grid columns={2} padded centered style={{ paddingTop: 80}} className='container_project_list'>
+      <Grid columns={2} padded centered style={{ paddingTop: 180}} className='container_project_list'>
         <Grid.Column width='10'>
           <h2>Mes projets</h2>
             { projects && projects.map(project => {
