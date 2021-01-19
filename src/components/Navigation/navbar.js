@@ -8,8 +8,7 @@ import SignedInLinks from './signedInLinks';
 
 const Navbar = (props) => {
     const {auth} = props;
-    const link = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>;
-    
+    const link = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>;    
     return (
       <Menu  size='huge' inverted >
         {link}

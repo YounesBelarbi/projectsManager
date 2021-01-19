@@ -12,18 +12,18 @@ const ProjectList = ({ projects } ) => {
       <Grid columns={2} padded centered style={{ paddingTop: 180}} className='container_project_list'>
         <Grid.Column width='10'>
           <h2>Mes projets</h2>
-            { projects && projects.map(project => {
-              return (
-                <div key={project.id} className='project_list'>
-                  <Link to={'/project/' + project.id} key={project.id}>
-                      <ProjectSummary project={project} />
-                  </Link>
-                </div>
-              )
-            })}  
+          { projects && projects.map(project => {
+            return (
+              <div key={project.id} className='project_list'>
+                <Link to={'/project/' + project.id} key={project.id}>
+                    <ProjectSummary project={project} />
+                </Link>
+              </div>
+            )
+          })}  
         </Grid.Column>
         <Grid.Column width='5' style={{ textAlign: 'center' }}>
-        <h2>Historique de mes actions</h2>
+          <h2>Historique de mes actions</h2>
           <Notification/>
         </Grid.Column>        
       </Grid>

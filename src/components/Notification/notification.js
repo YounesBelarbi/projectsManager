@@ -12,6 +12,7 @@ const Notifications = ({notifications}) => {
   if (!isLoaded(notifications)) {
     return <div>Loading...</div>
   }
+  
   return (
     <div>
       {notifications && notifications.map(notification => {        

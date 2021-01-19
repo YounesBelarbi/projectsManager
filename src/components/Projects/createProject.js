@@ -35,7 +35,7 @@ class  CreateProject extends Component {
 						</Form>
 					</Segment>
 				</Grid.Column>  
-		</Grid>
+			</Grid>
 		);
 	}
 }
