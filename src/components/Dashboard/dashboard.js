@@ -15,9 +15,11 @@ const Dashboard = ({ projects, profile }) => {
 
   return (
     <div>
-      <div className='initial'>
-        <p>{profile.initial}</p>
-      </div>
+      {profile.initial ?
+        <div className='initial'>
+          <p>{profile.initial}</p>
+        </div> 
+      : null }
       <ProjectList projects = {projects}/>
     </div>
     )
