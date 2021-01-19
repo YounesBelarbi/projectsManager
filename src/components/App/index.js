@@ -11,12 +11,12 @@ import Dashboard from '../Dashboard/dashboard';
 import  ProjectDetails  from '../Projects/projectDetails';
 import  ProjectEdit  from '../Projects/projectEdit';
 import Home from '../Home/home';
-import NoMatch from '../NoMatch/noMatch'
+import NoMatch from '../NoMatch/noMatch';
 
 
 const AuthIsLoaded = ({ children }) => {
   const auth = useSelector(state => state.firebase.auth)
-  if (!isLoaded(auth)) return <div></div>;
+  if (!isLoaded(auth)) return <div>Loading...</div>;
   return children
 }
 

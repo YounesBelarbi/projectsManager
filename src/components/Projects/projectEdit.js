@@ -20,13 +20,11 @@ class  ProjectEdit extends Component {
     }
     
     handleChange = (e) => {
-        console.log(e)
         this.setState ({[e.target.id] : e.target.value})
     }
     
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e)
         this.props.ProjectEditAction(this.props.match.params.id, this.state);
         this.props.history.push('/dashboard');
     }
@@ -44,8 +42,8 @@ class  ProjectEdit extends Component {
                         </Form>
                     </Segment>
                 </Grid.Column>  
-        </Grid>
-        );
+            </Grid>
+        )
     }
 }
 

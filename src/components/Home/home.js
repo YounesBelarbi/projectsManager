@@ -19,7 +19,6 @@ const home = ({ authId }) => {
         </Container>          
       </Segment>
     </div>
-
   )
 }
 
