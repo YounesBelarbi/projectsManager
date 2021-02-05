@@ -29,7 +29,7 @@ const Main = () => {
           <Route exact path="/" component={Home}/>
           <Route path="/signin" component={SignIn}/>
           <Route path="/signup" component={SignUp}/>
-          <Route path="/createProject" component={CreateProject}/>
+          <Route path="/project/create" component={CreateProject}/>
           <Route path="/dashboard" component={Dashboard}/>
           <Route path='/project/:id' component={ProjectDetails} />
           <Route path='/edit/:id' component={ProjectEdit} />

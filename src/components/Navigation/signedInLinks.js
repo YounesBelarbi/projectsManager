@@ -25,7 +25,7 @@ const SignedOutLinks = (props) => {
                 }}
             />
             <Menu.Item 
-                as={NavLink} to="/createProject"
+                as={NavLink} to="/project/create"
                 name='Nouveau projet'
                 activeStyle={{
                     background:'#1279c6',
@@ -38,7 +38,7 @@ const SignedOutLinks = (props) => {
                     name='signOut'  
                     onClick={props.signOut}
                 >
-                    se déconnecter
+                    Déconnexion
                 </Button>
             </Menu.Item>
         </Container> 

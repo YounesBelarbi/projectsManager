@@ -21,7 +21,7 @@ const SignedOutLinks = () => {
                     color='blue'
                     name='signIn'  
                 >
-                    se connecter
+                    Connexion
                 </Button>
                 <Button 
                     style={{ marginLeft: '0.5em' }}
@@ -29,7 +29,7 @@ const SignedOutLinks = () => {
                     color='blue'
                     name='signUp' 
                 >
-                    s'inscrire
+                    Inscription
                 </Button>
             </Menu.Item>
       </Container>
