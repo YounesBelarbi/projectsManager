@@ -38,7 +38,7 @@ const SignedOutLinks = (props) => {
                     name='signOut'  
                     onClick={props.signOut}
                 >
-                    se déconnecter
+                    Déconnexion
                 </Button>
             </Menu.Item>
         </Container> 

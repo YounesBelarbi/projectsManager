@@ -13,7 +13,7 @@ const home = ({ authId }) => {
             Création et gestion de projets
           </Header>
           <p>
-            Cette application vous permettra de créer et de gérer facilement tout vos projets.
+            Cette application vous permettra de créer et de gérer facilement tous vos projets.
           </p>
           {!authId ? <Button as={Link} to='signup' size='massive'>Commencer</Button> : null }
         </Container>          
